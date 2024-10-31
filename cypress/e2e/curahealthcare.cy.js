@@ -1,5 +1,7 @@
 describe('Make Appointment', () => {
   it('Verify user can make appointment', () => {
+
+    //login
     cy.visit('https://katalon-demo-cura.herokuapp.com');
     cy.wait(1000);
     cy.get("#btn-make-appointment").click();
@@ -13,6 +15,7 @@ describe('Make Appointment', () => {
     // verify expected result
     cy.get("h2").should("contain", "Make Appointment");
 
+    //fill appointment
     cy.wait(1000);
     cy.get('select').select('Seoul CURA Healthcare Center');
     cy.wait(2000);
